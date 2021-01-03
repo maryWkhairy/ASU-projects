@@ -41,6 +41,38 @@
 			border:1px solid;
 			color:black;
 		}
+		/*products dropdown menu style*/
+		      .dropdown-content {
+			display: none;
+			position: absolute;
+			background-color: #bbbbbb;
+			min-width: 160px;
+			overflow: auto;
+			box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+			z-index: 1;
+		      }
+		      .dropdown-content a {
+			color: #0a043c;
+			padding: 12px 16px;
+			text-decoration: none;
+			display: block;
+		      }
+		      .show {display: block;}
+		      .insideNav {
+			display: none;
+			width: 300px;
+			height: 500px;
+			position: absolute;
+			left: 400px;
+			top: 50px;
+			right: 0;
+			background-color: #0a043c;
+			z-index: 1;
+		      }
+		      .insideNav a {
+			color: white;
+			display: block;
+		      }
 		/*.slider{
 			width:1200px;
 			height:1000px;
@@ -53,56 +85,63 @@
 			75%{background:url(file:///F:/Light%20Center/User/Desktop/F4.jpg)}
 			100%{background:url(file:///F:/Light%20Center/User/Desktop/F5.jpg)}
 
-		}*/
+		}
 		.search{
             position: absolute;
             right: 20px;
             
-            }
+            }*/
 	</style>
   </head>
   <body>
-  <header>
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="C:\Users\User\Documents\furniture\homePage.html">Furniture</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav me-auto mb-2 mb-md-0">
-          <li class="nav-item active">
-            <a class="nav-link" aria-current="page" href="#">Products</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" aria-current="page" href="#">Sale</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" aria-current="page" href="#">What's new</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" aria-current="page" href="file:///D:/First%20Term/SW%20PROJECT/Login%20Page/M3.html">LOGIN</a>
-          </li>
-          
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li> -->
-        </ul>
-        <div class="search">
-               
-           <form class="d-flex">
-             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-             <button class="btn btn-outline-success" type="submit">Search</button>
-           </form> 
+     <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top" style=background-color:#0a043c;>
+        <div class="container-fluid">
+
+          <a class="navbar-brand" href="#">Furniture</a>
+          <button class="navbar-toggler" type="button"  onclick="openNav()" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!--<button class="navbar-toggler" onclick="openNav()">☰</button>-->
+          <div class="insideNav" id="NavElements">
+            <a href="#">LOGIN</a>
+            <a href="#">Offers</a>
+            <a href="#">chairs</a>
+            <a href="#">Armchairs</a>
+            <a href="#">chaiselongues</a>
+            <a href="#">Sofas</a>
+            <a href="#">Wardrobes</a>
+            <a href="#">Beds</a>
+            <a href="#">Shelving units</a>
+            <a href="#">Tables</a>
+          </div>
+          <div class="collapse navbar-collapse" id="navbarCollapse"> <!--this content will disapear on small window-->
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item">
+               <!--<div class="dropdown">-->
+                <a class="nav-link active"  href="#" onclick="myFunction()" >Products</a>
+                <div id="myDropdown" class="dropdown-content">
+                  <a href="#">chairs</a>
+                  <a href="#">Armchairs</a>
+                  <a href="#">chaiselongues</a>
+                  <a href="#">Sofas</a>
+                  <a href="#">Wardrobes</a>
+                  <a href="#">Beds</a>
+                  <a href="#">Shelving units</a>
+                  <a href="#">Tables</a>
+                </div>  
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" aria-current="page" href="#">Offers</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" aria-current="page" href="C:\Users\User\Documents\furniture\loginPage.html">LOGIN</a>
+              </li>
+            </ul>
+          </div>
         </div>
-       
-      </div>
-    </div>
-  </nav>
-</header>
+      </nav>
+    </header>
 
 <main>
 	<div class="Form my-4 mx-5">
@@ -140,8 +179,21 @@
 			</div>
 		</div>
 	</div>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+   <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>-->
+	<script>
+	      /*dropdown of products*/
+	      /* When the user clicks on the button, 
+	      toggle between hiding and showing the dropdown content */
+	      function myFunction() {
+		document.getElementById("myDropdown").classList.toggle("show");
+	      }
+	      /* navbar toggler*/
+	      function openNav() {
+		  document.getElementById("NavElements").style.display
+		  /*document.getElementById("main").style.marginLeft = "250px";*/
+	      }
+      </script>
   </body>
 </html>
