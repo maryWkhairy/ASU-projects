@@ -1,0 +1,44 @@
+.center {
+    text-align: center;
+}
+
+.row {
+    margin: 10%;
+}
+.container {
+    border-style: solid;
+    border-color:#0A043C ;
+    border-radius: 20px;
+    
+   
+    background-color:#bbbbbb;
+}
+h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 450%;
+    color: #0A043C;
+    
+}
+
+ h2 {
+    color: #0A043C;
+    font-size: 200%;
+    line-height: 2;
+    font-family: 'Domine', serif;
+}
+
+h4 {
+    color: #0A043C;
+    font-size: 150%;
+    line-height: 2;
+}
+body {
+    background-color: white;
+   padding-top: 10%;
+   padding-left: 20%;
+   padding-right: 20%;
+   padding-bottom: 10%;
+}
+div {
+    line-height: 2;
+}
