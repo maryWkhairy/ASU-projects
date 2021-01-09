@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <!--<input type="text" name="title">-->
+        <input type="submit" name="ok">
+    <form>
+        {% for image in imagess_html %}
+        <h3>{{image.title}}</h3>
+        {% if image.image %}
+        <img src="{{image.image.url}}" alt="connect" style="max-height:100px" >
+        {% endif %}
+	    {% if image.image2 %}
+        <img src="{{image.image2.url}}" alt="connect" style="max-height:100px" >
+        {% endif %}
+	    {% endfor %}
+
+
+</body>
+</html>
