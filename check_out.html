@@ -20,6 +20,7 @@
 <link rel="manifest" href="/docs/5.0/assets/img/favicons/manifest.json">
 <link rel="mask-icon" href="/docs/5.0/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">
 <link rel="icon" href="/docs/5.0/assets/img/favicons/favicon.ico">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 <meta name="theme-color" content="#7952b3">
 
 
@@ -38,6 +39,11 @@
           font-size: 3.5rem;
         }
       }
+      @media (max-width: 768px){
+        .container{
+            margin-top: 200px;
+        }
+    }
       .confirm{
           background-color: #0a043c;
           color:  white;
@@ -80,10 +86,7 @@ input[type="radio"]:checked ~ .reveal-if-active {
     transform: scale(1);
     overflow: visible;
 }
-.search{
-          position: absolute;
-          right: 20px;
-      }
+/*products dropdown menu style*/
 .dropdown-content {
         display: none;
         position: absolute;
@@ -100,21 +103,16 @@ input[type="radio"]:checked ~ .reveal-if-active {
         display: block;
       }
       .show {display: block;}
-      .insideNav {
-        display: none;
-        width: 300px;
-        height: 500px;
-        position: absolute;
-        left: 400px;
-        top: 50px;
-        right: 0;
-        background-color: #0a043c;
-        z-index: 1;
-      }
-      .insideNav a {
+      .navbar-nav h1{
+        font-family: 'georgia', serif;
+        font-size: 30px;
         color: white;
-        display: block;
+        padding-right: 10px;
       }
+      .navbar-nav a:hover{
+        background-color: #ffe3d8;
+        
+      } 
     </style>
 
     
@@ -122,88 +120,37 @@ input[type="radio"]:checked ~ .reveal-if-active {
     <link href="form-validation.css" rel="stylesheet">
   </head>
   <body class="bg-light">
-      <header>
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top" style=background-color:#0a043c;>
-            <div class="container-fluid">
-    
-              <a class="navbar-brand" href="#">Furniture</a>
-              <button class="navbar-toggler" type="button"  onclick="openNav()" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <!--<button class="navbar-toggler" onclick="openNav()">☰</button>-->
-              <div class="insideNav" id="NavElements">
-                <a href="#">LOGIN</a>
-                <a href="#">Offers</a>
-                <a href="#">chairs</a>
-                <a href="#">Armchairs</a>
-                <a href="#">chaiselongues</a>
-                <a href="#">Sofas</a>
-                <a href="#">Wardrobes</a>
-                <a href="#">Beds</a>
-                <a href="#">Shelving units</a>
-                <a href="#">Tables</a>
-              </div>
-              <div class="collapse navbar-collapse" id="navbarCollapse"> <!--this content will disapear on small window-->
-                <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                  <li class="nav-item">
-                   <!--<div class="dropdown">-->
-                    <a class="nav-link active"  href="#" onclick="myFunction()" >Products</a>
-                    <!--<a><button  onclick="myFunction()" >Products</button></a>-->
-                    <div id="myDropdown" class="dropdown-content">
-                      <a href="#">chairs</a>
-                      <a href="#">Armchairs</a>
-                      <a href="#">chaiselongues</a>
-                      <a href="#">Sofas</a>
-                      <a href="#">Wardrobes</a>
-                      <a href="#">Beds</a>
-                      <a href="#">Shelving units</a>
-                      <a href="#">Tables</a>
-                    </div>
-                  <!--</div>-->  
-                  </li>
-                  <!--<a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">Products</a>
-                    <ul class="dropdown-menu " aria-labelledby="dropdown01">/////////class="dropbtn"
-                      <li><a class="dropdown-item" href="#">chairs</a></li>
-                      <li><a class="dropdown-item" href="#">Armchairs</a></li>
-                      <li><a class="dropdown-item" href="#">chaiselongues</a></li>
-                      <li><a class="dropdown-item" href="#">Sofas</a></li>
-                      <li><a class="dropdown-item" href="#">Wardrobes</a></li>
-                      <li><a class="dropdown-item" href="#">Beds</a></li>
-                      <li><a class="dropdown-item" href="#">Shelving units</a></li>
-                      <li><a class="dropdown-item" href="#">Tables</a></li>
-                    </ul>-->
-                  
-                  <!--<li class="nav-item active">
-                    <a class="nav-link" aria-current="page" href="#">Products</a>
-                  </li>-->
-                  <li class="nav-item active">
-                    <a class="nav-link" aria-current="page" href="#">Offers</a>
-                  </li>
-                 
-                  <li class="nav-item active">
-                    <a class="nav-link" aria-current="page" href="C:\Users\User\Documents\furniture\loginPage.html">LOGIN</a>
-                  </li>
-                </ul>
-                <!--<a href="#"><i class="fa fa-shopping-cart" style="color:white"></i></a>
-                <div class="search-container search">
-                  <form action="/action_page.php">
-                    <input type="text" placeholder="Search.." name="search">
-                    <button type="submit"><i class="fa fa-search"></i></button>
-                  </form>
-                </div>-->
-                <!--<div class="search">
-                       
-                   <form class="d-flex">
-                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                     <button class="btn btn-outline-success" type="submit">Search</button>
-                   </form> 
-                </div>-->
-               
-              </div>
-            </div>
-          </nav>
-      </header>
-    
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top" style=background-color:#0a043c;>
+        <div class="container-fluid">                      
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">              
+            <h1><a style="color:white" href="#"><i class="fa fa-home"></i></a>Furniture</h1>      
+              <li>
+                <a class="nav-link active"  href="#">Offers</a>
+              </li>
+              <li>
+                <a class="nav-link active"  href="#">Wishlist</a>
+              </li>
+              <li>
+                <a class="nav-link active"  href="#">Cart</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link active"  href="#" onclick="myFunction()" >Products</a> 
+                <div id="myDropdown" class="dropdown-content">
+                  <a href="#">chairs</a>
+                  <a href="#">Armchairs</a>
+                  <a href="#">chaiselongues</a>
+                  <a href="#">Sofas</a>
+                  <a href="#">Wardrobes</a>
+                  <a href="#">Beds</a>
+                  <a href="#">Shelving units</a>
+                  <a href="#">Tables</a>
+                </div>
+              </li>
+            </ul>
+        </div>
+      </nav>
+    </header>
 <div class="container">
   <main>
     <div class="py-5 text-center" style = "position:relative; top:30px; " >
@@ -441,6 +388,11 @@ document.getElementById("cash").addEventListener('change', function(){
     document.getElementById("cc-expiration").required = !this.checked;
     document.getElementById("cc-cvv").required = !this.checked;
 })
+    /*dropdown of products*/  
+      function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+        }
+      
     </script>
   </body>
 </html>
