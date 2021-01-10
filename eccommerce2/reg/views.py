@@ -4,8 +4,9 @@ from django.contrib import messages
 
 # Create your views here.
 
+
 def reg(request):
-    if request.method=='POST':
+    if request.method == 'POST':
         username = request.POST['username']
         # first_name = request.POST['firstname']
         # last_name = request.POST['lastname']
@@ -13,21 +14,24 @@ def reg(request):
         password = request.POST['password']
         password_confirm = request.POST['password1']
 
-
         if password == password_confirm:
             if User.objects.filter(username=username).exists():
-                messages.info(request, "!! username taken")
+                messages.info(request, "!! Username taken")
+                return redirect('/reg')
+            elif User.objects.filter(email=email).exists():
+                messages.info(request, "!! E-mail already used")
                 return redirect('/reg')
             else:
                 user = User.objects.create_user(username=username, email=email, password=password)
                 user.save()
                 print('user created')
-                return redirect('/log')
+                auth.login(request, user)
+                return redirect('/')
         else:
             messages.info(request, "!! passwords aren't matching")
             return redirect('/reg')
     else:
-        return render(request,'reg.html')
+        return render(request, 'reg.html')
 
 
 def log(request):
@@ -38,7 +42,7 @@ def log(request):
         user = auth.authenticate(username=username, password=password)
 
         if user is not None:
-            auth.login(request,user)
+            auth.login(request, user)
             print('success')
             return redirect('/')
 
