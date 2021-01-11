@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Create New Account</title>
+	<style>
+		{
+			padding:0px;
+			margin:0px;
+			box-sizing: border-box;
+		}
+		body{
+			background:rgb(219 ,226, 226);
+		}
+		.row{
+			background:white;
+			border-radius:30px;
+			box-shadow:12px 12px 22px grey;
+		}
+		img{
+			border-top-left-radius:30px;
+			border-bottom-left-radius:30px;
+		}
+		.btn1{
+			border:none;
+			outline:none;
+			height:50px;
+			width:100%;
+			background-color:black;
+			color:white;
+			border-radius:4px;
+			font-weight:bold;
+		}
+		.btn1:hover{
+			background:white;
+			border:1px solid;
+			color:black;
+		}
+		.slider{
+			<!--width:1200px;
+			height:1000px;-->
+			background:url(file:///F:/Light%20Center/User/Desktop/F.jpg);
+			animation:slide 7s infinite;
+		}
+		@keyframes slide{
+			25%{background:url(file:///F:/Light%20Center/User/Desktop/F.jpg)}
+			50%{background:url(file:///F:/Light%20Center/User/Desktop/F3.jpg)}
+			75%{background:url(file:///F:/Light%20Center/User/Desktop/F4.jpg)}
+			100%{background:url(file:///F:/Light%20Center/User/Desktop/F5.jpg)}
+
+		}
+        .search{
+            position: absolute;
+            right: 20px;
+
+
+        }
+        .square{
+            position: relative;
+            margin-top: 90px;
+        }
+	</style>
+  </head>
+  <body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="C:\Users\User\Documents\furniture\homePage.html">Furniture</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+              <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item active">
+                  <a class="nav-link" aria-current="page" href="#">Products</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" aria-current="page" href="#">Sale</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" aria-current="page" href="#">What's new</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" aria-current="page" href="C:\Users\User\Documents\furniture\loginPage.html">LOGIN</a>
+                </li>
+                <!-- <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li> -->
+              </ul>
+              <div class="search">
+                 <form class="d-flex">
+                   <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                   <button class="btn btn-outline-success" type="submit">Search</button>
+                 </form>
+              </div>
+
+            </div>
+          </div>
+        </nav>
+      </header>
+	<div class="Form my-4 mx-5">
+		<div class="container">
+			<div class="row no-gutters square">
+				<div class="col-lg-5">
+					<div class="slider" alt="">
+					</div>
+				</div>
+				<div class="col-lg-7 px-5 pt-5">
+					<h1 class="font-weight-bold py-3">Furniture</h1>
+					<h4>Create New Account</h4>
+					<form method="POST"  >
+						{% csrf_token %}
+
+						<div>
+						{% for message in messages %}
+							<font color="red"></font>
+						<h3> {{ message }} </h3>
+						{% endfor %}
+					</div>
+                     <div class="form-row">
+							<div class="col-lg-7">
+								<input type="text" placeholder="Enter your Username" id="username" name="username" class="form-control my-3 p-4">
+							</div>
+						</div>
+
+
+
+						<div class="form-row">
+							<div class="col-lg-7">
+								<input type="email" placeholder="Enter your email" id="email" name="email" class="form-control my-3 p-4">
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="col-lg-7">
+								<input type="password" placeholder="Enter your password" id="password" name="password" class="form-control my-3 p-4">
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="col-lg-7">
+								<input type="password" placeholder="Re-Enter Password" id="password1" name="password1" class="form-control my-3 p-4">
+							</div>
+						</div>
+
+
+						<div class="form-row">
+							<div class="col-lg-7">
+								<div class="dropdown">
+									<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+										select
+									</button>
+									<div class="dropdown-menu">
+										<input type="radio" id="user" name="check" value="user">
+										<label for="user">User</label><br>
+										<input type="radio" id="seller" name="check" value="seller">
+										<label for="seller">Seller</label><br>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="form-row">
+							<div class="col-lg-7">
+								<button type="submit" class="btn1 mt-3 mb-5">Create New Account</button>
+							</div>
+						</div>
+
+					</form>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
+</html>
