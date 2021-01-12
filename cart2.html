@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="cart.css">
     <style>
       .cart-wrap {
-      padding: 80px 0;
+      padding: 100px 0;
       font-family: 'Open Sans', sans-serif;
     }
     .main-heading {
@@ -23,7 +24,7 @@
     }
     .table-cart thead tr th {
         padding: 8px 0 18px;
-        color: #484848;
+        color: #0a043c;
         font-size: 15px;
         font-weight: 400;
     }
@@ -56,7 +57,7 @@
     }
     .table-cart tr td .name-product {
         font-size: 15px;
-        color: #484848;
+        color: #0a043c;
         padding-top: 8px;
         line-height: 24px;
         width: 50%;
@@ -65,7 +66,7 @@
         text-align: right;
         line-height: 64px;
         margin-right: 40px;
-        color: #989898;
+        color: #0a043c;
         font-size: 16px;
         font-family: 'Nunito';
     }
@@ -106,7 +107,7 @@
     .total {
       font-size: 24px;
       font-weight: 600;
-      color: #03506f;
+      color: #0a043c;
     }
     .display-flex {
       display: flex;
@@ -114,7 +115,10 @@
     .align-center {
       align-items: center;
     }
-    
+    .counter{
+      background-color: transparent;
+      border-color: transparent;
+    }
     .coupon-box {
         padding: 63px 0 58px;
         text-align: center;
@@ -128,7 +132,7 @@
         margin-right: 13px;
         height: 44px;
         border-radius: 25px;
-        border: solid 2px #cccccc;
+        border: solid 2px #0a043c;
         padding: 5px 15px;
         font-size: 14px;
     }
@@ -136,19 +140,19 @@
       outline: none;
       box-shadow: none;
     }
-    .round-black-btn {
+     /*.btn-secondary {
       border-radius: 25px;
-        background: #03506f;
+        background: #0a043c; 
         color: #fff;
         padding: 8px 35px;
         display: inline-block;
-        border: solid 2px #212529; 
+        border: solid 1px #0a043c; 
         transition: all 0.5s ease-in-out 0s;
         cursor: pointer;
-    }
-    .round-black-btn:hover,
-    .round-black-btn:focus {
-      background: transparent;
+    } */
+    .btn-cart-totals .checkout:hover,
+    .btn-cart-totals .checkout:focus, .btn-cart-totals .checkout:active,.btn-cart-totals .checkout.active, .open>.dropdown-toggle, .btn-cart-totals .checkout{
+      background: #ffe3d8;
       color: #212529;
       text-decoration: none;
     }
@@ -157,9 +161,14 @@
       background: #e7e7e7;
       padding: 25px;
     }
+    .btn-cart-totals .checkout {
+      background-color: #0a043c;
+      color:  white;
+     border-color:  #ffe3d8;
+    }
     .cart-totals h3 {
       font-size: 19px;
-        color: #3c3c3c;
+        color: #0a043c;
         letter-spacing: 1px;
         font-weight: 500;
     }
@@ -177,11 +186,11 @@
     }
     .cart-totals table tr td.subtotal {
       font-size: 20px;
-        color: #6f6f6f;
+        color: #0a043c;
     }
     .cart-totals table tr td.free-shipping {
       font-size: 14px;
-        color: #6f6f6f;
+        color: #0a043c;
     }
     .cart-totals table tr.total-row td {
       padding-top: 25px;
@@ -189,16 +198,26 @@
     .cart-totals table tr td.price-total {   
       font-size: 24px;
         font-weight: 600;
-        color: #03506f;
+        color: #0a043c;
     }
     .btn-cart-totals {
       text-align: center;
       margin-top: 60px;
       margin-bottom: 20px;
     }
-    .btn-cart-totals .round-black-btn {
+    .btn-cart-totals .checkout {
       margin: 10px 0; 
+    
     }
+    .mb-3{
+      font-size: 30px;
+        color:  #0a043c;
+      
+    }
+    .product-number{
+      border-color: transparent;
+    }
+    
     </style>
     
 </head>
@@ -279,12 +298,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8">
-                        <div class="main-heading">Shopping Cart</div>
+                      <h4 class="mb-3">Shopping cart</h4>
                         <div class="table-cart">
                             <table>
                                 <thead>
                                     <tr>
-                                        <th>Product</th>
+                                        <th class="name-product">Product</th>
                                         <th>Quantity</th>
                                         <th>Total</th>
                                         <th></th>
@@ -308,13 +327,20 @@
                                         </td>
                                         <td class="product-count">
                                             <form action="#" class="count-inlineflex">
-                                                <div class="qtyminus">-</div>
-                                                <input type="text" name="quantity" value="1" class="qty">
-                                                <div class="qtyplus">+</div>
+                               
+                                              <div class="qtyminus">
+                                                <input type="button" class="counter" name="quantity" onclick="decreaseValue()" value="-" />
+                                               </div>
+                                                 <input type="text" class="qtyminus product-number" id="number" value="0"/>
+                                                 
+                                                  <input type="button" class="counter" name="quantity" onclick="incrementValue()" value="+" >
+                                                 </div>
+                                               <!-- <input type="text" name="quantity" value="1" class="qty"> <input type="button" name="quantity" onclick="incrementValue()" value="+" > -->
+                                                
                                             </form>
                                         </td>
                                         <td>
-                                            <div class="total">
+                                            <div class="product-line-price">
                                                 $1,250.00 
                                             </div>
                                         </td>
@@ -325,52 +351,18 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>
-                                            <div class="display-flex align-center">
-                                                <div class="img-product">
-                                                   <!-- <img src="https://www.91-img.com/pictures/laptops/asus/asus-x552cl-sx019d-core-i3-3rd-gen-4-gb-500-gb-dos-1-gb-61721-large-1.jpg" alt="" class="mCS_img_loaded">
-            -->                                    </div>
-                                                <div class="name-product">
-                                                    sofa
-                                                   
-                                                </div>
-                                                <div class="price">
-                                                  <!--  $1,250.00 -->
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="product-count">
-                                            <form action="#" class="count-inlineflex">
-                                                <div class="qtyminus">-</div>
-                                                <input type="text" name="quantity" value="1" class="qty">
-                                                <div class="qtyplus">+</div>
-                                            </form>
-                                        </td>
-                                        <td>
-                                            <div class="total">
-                                                <!--$1,250.00-->
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <a href="#" title="">
-                                                <img src="images/icons/delete.png" alt="" class="mCS_img_loaded">
-                                            </a>
-                                        </td>
+                                      
+                                          </form> 
+                                      </td>
+                                       
                                     </tr>
                                 </tbody>
                             </table>
-                            <!--<div class="coupon-box">
-                                <form action="#" method="get" accept-charset="utf-8">
-                                    <div class="coupon-input">
-                                        <input type="text" name="coupon code" placeholder="Coupon Code">
-                                        <button type="submit" class="round-black-btn">Apply Coupon</button>
-                                    </div>
-                                </form>
-                            </div> ---->
+                            
                         </div>
-                        <!-- /.table-cart -->
+              
                     </div>
-                    <!-- /.col-lg-8 -->
+                 
                     <div class="col-lg-4">
                         <div class="cart-totals">
                             <h3>Cart Totals</h3>
@@ -393,9 +385,10 @@
                                 </table>
                                 <div class="btn-cart-totals">
                                     
-                                    <a href="#" class="checkout round-black-btn" title="">Proceed to Checkout</a>
+                  
+                                    <button type="button" class="btn btn-secondary btn-lg checkout ">Proceed to Checkout</button>
                                 </div>
-                                <!-- /.btn-cart-totals -->
+                                
                             </form>
                             <!-- /form -->
                         </div>
@@ -405,10 +398,25 @@
                 </div>
             </div>
         </div>
-        
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="	sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script>
+ function incrementValue()
+{
+    var value = parseInt(document.getElementById('number').value, 10);
+    value = isNaN(value) ? 0 : value;
+    value++;
+    document.getElementById('number').value = value;
+}
+function decreaseValue()
+{
+    var value = parseInt(document.getElementById('number').value, 10);
+    value = isNaN(value) ? 0 : value;
+    if (value !=1) {
+    value--;
+    }
+    document.getElementById('number').value = value;
+}
+
+        </script>
 
 </body>
 </html>
