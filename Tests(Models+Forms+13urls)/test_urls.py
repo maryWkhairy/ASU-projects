@@ -1,16 +1,23 @@
 from django.test import TestCase, Client, SimpleTestCase
-from django.urls import reverse
+from django.urls import reverse , resolve
 import os
 import django
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "eccommerce2.settings")
 django.setup()
-from dashboard.models import Additem
 from django.core.management import call_command
+from home.views import *
+from reg.models import *
+
+# Home Urls 13 tests
 
 
-class HomeTest(TestCase, SimpleTestCase):
+class HomeTest(TestCase):
     def setUp(self):
         self.client = Client()
+
+    # def test_home2(self):
+    #     url = reverse("home")
+    #     self.assertEqual(resolve(url).func, home)
 
     def test_home(self):
         response = self.client.get(reverse('home'))
@@ -56,22 +63,24 @@ class HomeTest(TestCase, SimpleTestCase):
         response = self.client.get(reverse('wardrobes'))
         self.assertEqual(response.status_code, 200)
 
-    # def test_buyer(self):
-    #     response = self.client.get(reverse('buyer'))
-    #     self.assertEqual(response.status_code, 200)
-    #
-    # def test_seller(self):
-    #     response = self.client.get(reverse('seller'))
-    #     self.assertEqual(response.status_code, 200)
-    # def test_get_all_chairs(self):
-    #     response = client.get(reverse('chairs'))
-    #     chairs = Additem.objects.filter(category='chairs')
-    #     self.assertEqual(response.data, chairs)
+    def test_seller(self):
+        response = self.client.get(reverse('seller'))
+        self.assertEqual(response.status_code, 200)
+
+    def test_buyer(self):
+        response = self.client.get(reverse('buyer'))
+        self.assertEqual(response.status_code, 200)
+
+
+# Cart Urls 7 test
+class CartTest(TestCase):
+    def setUp(self):
+        self.client = Client()
+
+    # def test_show_items(self):
+    #     response = self.client.get(reverse('show_items'))
     #     self.assertEqual(response.status_code, 200)
 
-    # def test_get_all_armchairs(self):
-    #     response = client.get(reverse('armchairs'))
-    #     armchairs = Additem.objects.filter(category='armchairs')
-    #     self.assertEqual(response.data, armchairs)
-    #     self.assertEqual(response.status_code, 200)
+
+
 
