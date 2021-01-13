@@ -102,7 +102,7 @@ def add_quantity(request,pk):
     if ids:
         Total.objects.filter(user=request.user).update(total=total)
     else:
-        Total(user=request.user,total=total).save()
+        Total(user=request.user, total=total).save()
     Add_to_cart.objects.filter(user=request.user,product_id=pk).update(total=paid_cal,quantity=quantity)
     final = total + 150 + 100
 
