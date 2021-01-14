@@ -15,11 +15,13 @@ def reg(request):
 def log(request):
     return render(request, 'log.html')
 
+
 def buyer(request):
-    return render(request,'buyer_homepage.html')
+    return render(request, 'buyer_homepage.html')
+
 
 def seller(request):
-    return render(request,'seller_homepage.html')
+    return render(request, 'seller_homepage.html')
 
 
 # Categories
