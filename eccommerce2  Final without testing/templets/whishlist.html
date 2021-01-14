@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -436,27 +437,32 @@
             <nav class="navbar navbar-expand-md navbar-dark fixed-top" style=background-color:#0a043c;>
               <div class="container-fluid">
                   <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                  <h1><a style="color:white" href="#"><i class="fa fa-home"></i></a>Furniture</h1>
+                  <h1><a style="color:white" href="/buyer_homepage"><i class="fa fa-home"></i></a>Furniture</h1>
                     <li>
-                      <a class="nav-link active"  href="#">Offers</a>
+                      <a class="nav-link active"  href="/offers">Offers</a>
+                    </li>
+	                  <li>
+                  <a class="nav-link active"  href="/recommend">Recommended</a>
+                </li>
+                    <li>
+                    <li>
+
+                      <a class="nav-link active"  href="/whishlist">Wishlist</a>
                     </li>
                     <li>
-                      <a class="nav-link active"  href="#">Wishlist</a>
-                    </li>
-         			   <li>
-                      <a class="nav-link active"  href="#">Cart</a>
+                      <a class="nav-link active"  href="/cart_items">Cart</a>
                     </li>
                     <li class="nav-item active">
                       <a class="nav-link active"  href="#" onclick="myFunction()" >Products</a>
                       <div id="myDropdown" class="dropdown-content">
-                        <a href="#">chairs</a>
-                        <a href="#">Armchairs</a>
-                        <a href="#">chaiselongues</a>
-                        <a href="#">Sofas</a>
-                        <a href="#">Wardrobes</a>
-                        <a href="#">Beds</a>
-                        <a href="#">Shelving units</a>
-                        <a href="#">Tables</a>
+                        <a href="/chairs">chairs</a>
+                        <a href="/armchairs">Armchairs</a>
+                        <a href="/chaiselongues">chaiselongues</a>
+                        <a href="/sofas">Sofas</a>
+                        <a href="/wardrobes">Wardrobes</a>
+                        <a href="/beds">Beds</a>
+                        <a href="/shelving_units">Shelving units</a>
+                        <a href="/tables">Tables</a>
                       </div>
                     </li>
                   </ul>
@@ -470,12 +476,16 @@
 	  <div class="album py-5 bg-light">
 		<div class="container">
 		  <div class="row">
+			  {% for item in wish_items %}
 			<div class="col-md-4">
 			  <div class="card mb-4 shadow-sm">
-				<img src="C:\Users\User\Documents\GitHub\ASU-projects\table1.jpg" width="100%" height="100%" fill="#55595c" title="Chair">
+				  {% if item.image %}
+				   <img src ="{{item.image.url}}" width="100%" height="300" fill="#55595c" title="Chair">
+                  {% endif %}
+				<!--<img src="C:\Users\User\Documents\GitHub\ASU-projects\table1.jpg" width="100%" height="100%" fill="#55595c" title="Chair">-->
 				<div class="card-body">
-				  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-						<form>
+				  <p class="card-text">{{item.description}}</p>
+						<!--<form>
 						  <div class="rating-wrapper">
 								<input type="radio" name="rating1" id="star-1">
 								<label for="star-1"></label>
@@ -501,21 +511,18 @@
 							font-size: 17px;
 							resize: none;"></textarea>
 						  <input type="submit" class="btn btn-primary" value="Review" style="width: 100%; background-color:#0a043c;"> <br><br>
-						</form>
+						</form>-->
 				  <div class="d-flex justify-content-between align-items-center">
 
 					<!--<form>
 						<button type="submit" class="btn btn-primary" style="background-color:#0a043c;">Add to cart <i class="fa fa-shopping-cart"></i></button>
 					</form>-->
 					<form class="heart">
-                        <button type="submit" class="btn "><i class="fas fa-times-circle"></i></button>
-						<!--<a href="{% url 'remove_item' item.pk %}" class="btn btn-fas fa-times-circle-sm " role="button"></a>-->
+                        <!--<button type="submit" class="btn "><i class="fas fa-times-circle"></i></button>-->
+						<a href="{% url 'remove_from_wish' item.pk %}" class="btn btn-sm btn-outline-secondary" role="button">Remove</a>
 					</form>
 					<div data-v-940fefaa="" class="price">
-						<span data-v-940fefaa="" class="num"> 1000
-							<span data-v-940fefaa=""> EGP </span>
-						</span>
-						<span data-v-940fefaa="" class="original-price">1200
+						<span data-v-940fefaa="" class="num" style="font-weight:bold"> {{item.price}}
 							<span data-v-940fefaa=""> EGP </span>
 						</span>
 					</div>
@@ -523,6 +530,7 @@
 				</div>
 			  </div>
 			</div>
+			  {% endfor %}
 		  </div>
 		</div>
 	  </div>

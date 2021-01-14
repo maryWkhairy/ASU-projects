@@ -59,3 +59,4 @@ def log(request):
     else:
         return render(request, 'log.html')
 
+

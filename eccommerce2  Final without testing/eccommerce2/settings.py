@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'reg.apps.RegConfig',
     'home.apps.HomeConfig',
     'cart.apps.CartConfig',
+    'recommend',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

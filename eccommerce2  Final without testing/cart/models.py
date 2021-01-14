@@ -1,4 +1,7 @@
 from django.db import models
+
+# Create your models here.
+from django.db import models
 from django.contrib.auth.models import User
 # Create your models here.
 
@@ -34,6 +37,13 @@ class checkout_details(models.Model):
     email = models.CharField(max_length=50)
     phone = models.IntegerField()
     address = models.CharField(max_length=100)
-    country = models.CharField(max_length=20)
+    country = models.CharField(max_length=50)
+    currency = models.CharField(max_length=50)
     city = models.CharField(max_length=20)
-    cash = models.CharField(max_length=10)
+    paymentMethod = models.CharField(max_length=10)
+
+
+
+class User_participation(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
+    count = models.IntegerField(default=0)

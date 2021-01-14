@@ -31,6 +31,7 @@ urlpatterns = [
     path('',include('home.urls')),
     path('',include('dashboard.urls')),
     path('',include('cart.urls')),
+    path('',include('recommend.urls')),
 ]
 if settings.DEBUG:
     urlpatterns += staticfiles_urlpatterns()

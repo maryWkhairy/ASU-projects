@@ -107,21 +107,21 @@
         <nav class="navbar navbar-expand-md navbar-dark fixed-top" style=background-color:#0a043c;>
           <div class="container-fluid">
               <ul class="navbar-nav me-auto mb-2 mb-md-0">
-              <h1><a style="color:white" href="#"><i class="fa fa-home"></i></a>Furniture</h1>
+              <h1><a style="color:white" href="/seller"><i class="fa fa-home"></i></a>Furniture</h1>
                 <li>
-                  <a class="nav-link active"  href="#">Dashboard</a>
+                  <a class="nav-link active"  href="/dashboard">Dashboard</a>
                 </li>
                 <li class="nav-item active">
                   <a class="nav-link active"  href="#" onclick="myFunction()" >Products</a>
                   <div id="myDropdown" class="dropdown-content">
-                    <a href="#">chairs</a>
-                    <a href="#">Armchairs</a>
-                    <a href="#">chaiselongues</a>
-                    <a href="#">Sofas</a>
-                    <a href="#">Wardrobes</a>
-                    <a href="#">Beds</a>
-                    <a href="#">Shelving units</a>
-                    <a href="#">Tables</a>
+                    <a href="/chairs">chairs</a>
+                    <a href="/armchairs">Armchairs</a>
+                    <a href="/chaiselongues">chaiselongues</a>
+                    <a href="/sofas">Sofas</a>
+                    <a href="/wardrobes">Wardrobes</a>
+                    <a href="/beds">Beds</a>
+                    <a href="/shelving_units">Shelving units</a>
+                    <a href="/tables">Tables</a>
                   </div>
                 </li>
               </ul>
@@ -135,6 +135,7 @@
   <div class="row py-lg-5">
     <div class="col-lg-6 col-md-8 mx-auto">
       <h1 class="fw-light">Welcome to your Dashboard</h1>
+      <h4 style="color:#0a043c;font-weight:bold"> Your Rating is {{rating}} <span>  <i class="far fa-star" ></i></span></h4>
       <p class="lead text-muted">If you want to add a new item please fill in the form then press on "Add new item" button</p>
         <form method="POST" enctype="multipart/form-data">
           {% csrf_token %}
@@ -181,7 +182,7 @@
 
             <div>
               <small class="text-muted">{{item.date}}</small> <br>
-              <small class="text-muted" style="font-weight:bold">{{item.price}} L.E </small><br>
+              <small class="text-muted" style="font-weight:bold">{{item.price}} EGP </small><br>
               <small class="text-muted" > {{item.amount}} items</small>
 
             </div>

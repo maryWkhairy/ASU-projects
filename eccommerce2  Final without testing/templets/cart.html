@@ -6,6 +6,9 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="cart.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
       .cart-wrap {
       padding: 100px 0;
@@ -217,81 +220,97 @@
     .product-number{
       border-color: transparent;
     }
+
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+    @media (max-width: 768px){
+        .cart-wrap{
+            margin-top: 200px;
+        }
+    }
+
+    /*products dropdown menu style*/
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #bbbbbb;
+        min-width: 160px;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+      .dropdown-content a {
+        color: #0a043c;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+      .show {display: block;}
+      .navbar-nav h1{
+        font-family: 'georgia', serif;
+        font-size: 30px;
+        color: white;
+        padding-right: 10px;
+      }
+      /*.navbar-nav a{
+          margin-top: 10px;
+      }*/
+      .navbar-nav a:hover{
+        background-color: #ffe3d8;
+
+      }
+
     
     </style>
     
 </head>
 <body>
      <header>
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="file:///F:/Light%20Center/User/Downloads/homePage.html">Furniture</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav me-auto mb-2 mb-md-0">
-            <li class="nav-item active">
-            <a class="nav-link" aria-current="page" href="#">Products</a>
-            </li>
-            <li class="nav-item active">
-            <a class="nav-link" aria-current="page" href="#">Sale</a>
-            </li>
-            <li class="nav-item active">
-            <a class="nav-link" aria-current="page" href="#">What's new</a>
-            </li>
-            <li class="nav-item active">
-            <a class="nav-link" aria-current="page" href="file:///F:/Light%20Center/User/Desktop/M3.html">LOGIN</a>
-            </li>
-            
-            <!-- <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li> -->
-          </ul>
-          <div class="search">
-               
-             <form class="d-flex">
-             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-             <button class="btn btn-outline-success" type="submit">Search</button>
-             </form> 
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top" style=background-color:#0a043c;>
+          <div class="container-fluid">
+              <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <h1><a style="color:white" href="#"><i class="fa fa-home"></i></a>Furniture</h1>
+                <li>
+                  <a class="nav-link active"  href="/offers">Offers</a>
+                </li>
+	              <li>
+                  <a class="nav-link active"  href="/recommend">Recommended</a>
+                </li>
+                    <li>
+                <li>
+                  <a class="nav-link active"  href="/whishlist">Wishlist</a>
+                </li>
+                <li>
+                  <a class="nav-link active"  href="/cart_items">Cart</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link active"  href="#" onclick="myFunction()" >Products</a>
+                  <div id="myDropdown" class="dropdown-content">
+                    <a href="/chairs">chairs</a>
+                    <a href="/armchairs">Armchairs</a>
+                    <a href="/chaiselongues">chaiselongues</a>
+                    <a href="/sofas">Sofas</a>
+                    <a href="/wardrobes">Wardrobes</a>
+                    <a href="/beds">Beds</a>
+                    <a href="/shelving_units">Shelving units</a>
+                    <a href="/tables">Tables</a>
+                  </div>
+                </li>
+              </ul>
           </div>
-           
-          </div>
-        </div>
         </nav>
-        <!--<div class="collapse bg-dark" id="navbarHeader">
-        <div class="container">
-          <div class="row">
-          <div class="col-sm-8 col-md-7 py-4">
-            <h4 class="text-white">About</h4>
-            <p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
-          </div>
-          <div class="col-sm-4 offset-md-1 py-4">
-            <h4 class="text-white">Contact</h4>
-            <ul class="list-unstyled">
-            <li><a href="#" class="text-white">Follow on Twitter</a></li>
-            <li><a href="#" class="text-white">Like on Facebook</a></li>
-            <li><a href="#" class="text-white">Email me</a></li>
-            </ul>
-          </div>
-          </div>
-        </div>
-        </div>
-        <div class="navbar navbar-dark bg-dark shadow-sm">
-        <div class="container d-flex justify-content-between">
-          <a href="#" class="navbar-brand d-flex align-items-center">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="mr-2" viewBox="0 0 24 24" focusable="false"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
-          <strong>Furniture</strong>
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-          </button>
-        </div>
-        </div> -->
-    </header> 
+      </header>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <div class="cart-wrap">
@@ -299,6 +318,7 @@
                 <div class="row">
                     <div class="col-lg-8">
                       <h4 class="mb-3">Shopping cart </h4>
+	                    <h4 >If item is removed automatically, it is out of stock or the seller removed it. Sorry!!</h4>
                         <div class="table-cart">
                             <table>
                                 <thead>
@@ -353,7 +373,8 @@
 
                                                 </select>
                                                 <input type="submit" value="ADD" href="{% url 'add_quantity' product.product_id %}" class="btn btn-primary" style="background-color:#0a043c;">
-	                                            <b>{{product.quantity}} in cart</b>
+	                                            <b>{{product.quantity}} in cart </b><br>
+	                                            <b>max {{product.product_quantity}} in store</b>
 
                                             </form>
                                         </td>
@@ -362,6 +383,11 @@
                                                 {{product.total}}L.E
                                             </div>
                                         </td>
+	                                    <td>
+
+		                                    <a href="{% url 'remove_cart' product.product_id %}" class="btn btn-secondary delete"  role="button" style="float:left" >Remove</a>
+
+	                                    </td>
                                         <td>
                                             <a href="#" title="">
                                                 <img src="images/icons/delete.png" alt="" class="mCS_img_loaded">
@@ -395,18 +421,29 @@
                                         </tr>
                                         <tr>
                                             <td>Shipping</td>
-                                            <td class="free-shipping">$50</td>
+                                            <td class="free-shipping">100 L.E</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Assembly</td>
+                                            <td class="free-shipping">150 L.E</td>
                                         </tr>
                                         <tr class="total-row">
                                             <td>Total</td>
-                                            <td class="price-total">$1,300</td>
+                                            <td class="price-total">{{final}}L.E</td>
                                         </tr>
                                     </tbody>
                                 </table>
                                 <div class="btn-cart-totals">
                                     
-                  
-                                    <button type="button" class="btn btn-secondary btn-lg checkout ">Proceed to Checkout</button>
+
+                                    <a href="/checkout" type="submit" class="btn btn-secondary btn-lg checkout ">Proceed to Checkout</a>
+
+
+	                                <div>
+						{% for message in messages %}
+							<font color="red"></font>
+						<h3> {{ message }} </h3>
+						{% endfor %}
                                 </div>
                                 
                             </form>
@@ -435,7 +472,10 @@ function decreaseValue()
     }
     document.getElementById('number').value = value;
 }
-
+/*dropdown of products*/
+      function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+        }
         </script>
 
 </body>

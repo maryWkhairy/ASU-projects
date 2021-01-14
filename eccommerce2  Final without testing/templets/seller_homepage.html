@@ -1,3 +1,4 @@
+{%load static%}
 <!DOCTYPE html>
 <html>
 <head>
@@ -83,19 +84,19 @@
               <ul class="navbar-nav me-auto mb-2 mb-md-0">              
               <h1><a style="color:white" href="#"><i class="fa fa-home"></i></a>Furniture</h1>      
                 <li>
-                  <a class="nav-link active"  href="#">Dashboard</a>
+                  <a class="nav-link active"  href="/dashboard">Dashboard</a>
                 </li>
                 <li class="nav-item active">
                   <a class="nav-link active"  href="#" onclick="myFunction()" >Products</a> 
                   <div id="myDropdown" class="dropdown-content">
-                    <a href="#">chairs</a>
-                    <a href="#">Armchairs</a>
-                    <a href="#">chaiselongues</a>
-                    <a href="#">Sofas</a>
-                    <a href="#">Wardrobes</a>
-                    <a href="#">Beds</a>
-                    <a href="#">Shelving units</a>
-                    <a href="#">Tables</a>
+                    <a href="/chairs">chairs</a>
+                    <a href="/armchairs">Armchairs</a>
+                    <a href="/chaiselongues">chaiselongues</a>
+                    <a href="/sofas">Sofas</a>
+                    <a href="/wardrobes">Wardrobes</a>
+                    <a href="/beds">Beds</a>
+                    <a href="/shelving_units">Shelving units</a>
+                    <a href="/tables">Tables</a>
                   </div>
                 </li>
               </ul>
@@ -105,70 +106,71 @@
     <main>
         
           <div class="myDIV">
-            <img src="C:\Users\User\Documents\GitHub\ASU-projects\img3.jpg" height="100%" width="100%">
+             <img src="{%static 'background.jpg'%}" height="550px" width="100%">
            </div>
         
 
             
-         <div class="container marketing">
+         <div class="container marketing" style="margin-top:300px">
          
              <!-- Three columns of text below the carousel -->
              <div class="row">
                <div class="col-lg-4 col-md-6">
-                 <img src="C:\Users\User\Documents\GitHub\ASU-projects\chairs.jpg" class="rounded-circle" alt="Chair" height="290px" width="290px"> 
+                 <!--<svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>-->
+                 <img src="{% static 'chair.jpeg' %}" class="rounded-circle" alt="Chair" height="300px" width="300px">
                  <h2>Chairs</h2>
-                 <p>browse our range of chairs with highest quality, different tests, and best prices</p>
-                 <p><a class="btn btn-secondary" href="#" role="button" style="background-color:#0a043c;">View details »</a></p>                  
+                 <p>Enjoy various shapes,colours,comfy,unique Collection.</p>
+                 <p><a class="btn btn-secondary" href="/chairs" role="button" style="background-color:#0a043c;">View details »</a></p>
                </div>
                <!-- /.col-lg-4 -->
                <div class="col-lg-4 col-md-6">
-                <img src="C:\Users\User\Documents\GitHub\ASU-projects\armchairs.jpg" class="rounded-circle" alt="Chair" height="290px" width="290px">
+                <img src="{% static 'armchair.jpg' %}" class="rounded-circle" alt="Chair" height="300px" width="300px">
                  <h2>Armchairs</h2>
-                 <p>browse our range of armchairs with highest quality, different tests, and best prices</p>
-                 <p><a class="btn btn-secondary" href="#" role="button" style="background-color:#0a043c;">View details »</a></p>
+                 <p>Enjoy various shapes,colours,comfy,unique Collection.</p>
+                 <p><a class="btn btn-secondary" href="/armchairs" role="button" style="background-color:#0a043c;">View details »</a></p>
                </div>
                <!-- /.col-lg-4 -->
                <div class="col-lg-4 col-md-6">
-                <img src="C:\Users\User\Documents\GitHub\ASU-projects\chaise-lounge.jpg" class="rounded-circle" alt="Chair" height="290px" width="290px">
-                 <h2>Chaiselongues</h2>
-                 <p>browse our range of chaiselongues with highest quality, different tests, and best prices</p>
-                 <p><a class="btn btn-secondary" href="#" role="button" style="background-color:#0a043c;">View details »</a></p>
+                <img src="{% static 'chaise.jpg' %}" class="rounded-circle" alt="Chair" height="300px" width="300px">
+                 <h2>chaiselongues</h2>
+                 <p>Enjoy various shapes,colours,comfy,unique Collection.</p>
+                 <p><a class="btn btn-secondary" href="/chaiselongues" role="button" style="background-color:#0a043c;">View details »</a></p>
                </div>
                <!-- /.col-lg-4 -->
                <div class="col-lg-4 col-md-6">
-                <img src="C:\Users\User\Documents\GitHub\ASU-projects\sofas.jpeg" class="rounded-circle" alt="Chair" height="290px" width="290px">
+                <img src="{% static 'sofa.jpeg' %}" class="rounded-circle" alt="Chair" height="300px" width="300px">
                  <h2>Sofas</h2>
-                 <p>browse our range of sofas with highest quality, different tests, and best prices</p>
-                 <p><a class="btn btn-secondary" href="#" role="button" style="background-color:#0a043c;">View details »</a></p>
+                 <p>Enjoy various shapes,colours,comfy,unique Collection.</p>
+                 <p><a class="btn btn-secondary" href="/sofas" role="button" style="background-color:#0a043c;">View details »</a></p>
                </div>
                <!-- /.col-lg-4 -->
                <div class="col-lg-4 col-md-6">
-                <img src="C:\Users\User\Documents\GitHub\ASU-projects\Wardrobes.jpg" class="rounded-circle" alt="Chair" height="290px" width="290px">
+                <img src="{% static 'war.jpg' %}" class="rounded-circle" alt="Chair" height="300px" width="300px">
                  <h2>Wardrobes</h2>
-                 <p>browse our range of wardrobes with highest quality, different tests, and best prices</p>
-                 <p><a class="btn btn-secondary" href="#" role="button" style="background-color:#0a043c;">View details »</a></p>
+                 <p>Enjoy various shapes,colours,sizes in our unique Collection.</p>
+                 <p><a class="btn btn-secondary" href="/wardrobes" role="button" style="background-color:#0a043c;">View details »</a></p>
                </div>
                <!-- /.col-lg-4 -->
                <div class="col-lg-4 col-md-6">
-                <img src="C:\Users\User\Documents\GitHub\ASU-projects\Beds.jpg" class="rounded-circle" alt="Chair" height="290px" width="290px">
+                <img src="{% static 'bed.jpg' %}" class="rounded-circle" alt="Chair" height="300px" width="300px">
                  <h2>Beds</h2>
-                 <p>browse our range of beds with highest quality, different tests, and best prices</p>
-                 <p><a class="btn btn-secondary" href="#" role="button" style="background-color:#0a043c;">View details »</a></p>
+                 <p>Enjoy various shapes,colours,comfy,unique Collection.</p>
+                 <p><a class="btn btn-secondary" href="/beds" role="button" style="background-color:#0a043c;">View details »</a></p>
                </div>
                <!-- /.col-lg-4 -->
                <div class="col-lg-4 col-md-6">
-                <img src="C:\Users\User\Documents\GitHub\ASU-projects\Shelving units.jpg" class="rounded-circle" alt="Chair" height="290px" width="290px">
+                <img src="{% static 'shelf.jpg' %}" class="rounded-circle" alt="Chair" height="300px" width="300px">
                  <h2>Shelving units</h2>
-                 <p>browse our range of shelving units with highest quality, different tests, and best prices</p>
-                 <p><a class="btn btn-secondary" href="#" role="button" style="background-color:#0a043c;">View details »</a></p>
+                 <p>Enjoy various shapes,colours,sizes in our unique Collection.</p>
+                 <p><a class="btn btn-secondary" href="/shelving_units" role="button" style="background-color:#0a043c;">View details »</a></p>
                </div>
                <!-- /.col-lg-4 -->
                <div class="col-lg-4 col-md-6">
-                <img src="C:\Users\User\Documents\GitHub\ASU-projects\Tables.jpg" class="rounded-circle" alt="Chair" height="290px" width="290px">
+                <img src="{% static 'table.jpg' %}" class="rounded-circle" alt="Chair" height="300px" width="300px">
                  <h2>Tables</h2>
-                 <p>browse our range of tables with highest quality, different tests, and best prices</p>
-                 <p><a class="btn btn-secondary" href="#" role="button" style="background-color:#0a043c;">View details »</a></p>
-               </div>         
+                 <p>Enjoy various shapes,colours,sizes in our unique Collection.</p>
+                 <p><a class="btn btn-secondary" href="/tables" role="button" style="background-color:#0a043c;">View details »</a></p>
+               </div>
         </div>
         <div class="arrow">
             <a href="#">
